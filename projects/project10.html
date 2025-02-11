@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kargoland Detayları</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="../index.html#projects">Portfolio</a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="../index.html#home">Ana Sayfa</a></li>
+            <li><a href="../index.html#about">Hakkımda</a></li>
+            <li><a href="../index.html#skills">Yetenekler</a></li>
+            <li><a href="../index.html#projects">Projeler</a></li>
+            <li><a href="../index.html#contact">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <div class="project-detail">
+        <div class="project-header">
+            <h1 data-aos="fade-up">Kargoland Mobil Oyun</h1>
+            <div class="project-meta">
+                <div class="tech-stack">
+                    <span class="tech-tag"><i class="fab fa-react"></i>Unity</span>
+                    <span class="tech-tag"><i class="fab fa-node-js"></i> C#</span>
+                    
+                </div>
+            </div>
+        </div>
+
+      
+        
+
+            <div class="project-description" data-aos="fade-up"> 
+                <h2>Proje Hakkında</h2>
+                <p>Bu mobil oyun çeşitli görevler ve zorluklar ile kargoyu belirlenen hedefe zamanında taşıma oyunudur.</p>
+                
+                <h2>Teknik Detaylar</h2>
+                <ul>
+                    <li>Frontend: Oyun,Unity uygulaması üzerinden C# dili ile kodlandı.</li>
+            
+                    
+                </ul>
+
+                <h2>Öne Çıkan Özellikler</h2>
+                <ul>
+                    <li>Çeşitli Zorluk Seviyeleri</li>
+                    <li>Gerçekçi Fizik Sistemi</li>
+                    <li>Zaman Sınırlı Görevler</li>
+                    <li>Skor ve Ödüller Sistemi</li>
+                    <li>Çeşitli Kargo Türleri</li>
+
+
+                </ul>
+
+              
+                
+                    <h2>Proje Galerisi(Galeride Gezinmek İçin Fotoğrafların Üstüne Tıklayınız)si</h2>
+                    <div class="gallery-grid">
+                        <div class="gallery-item" onclick="openLightbox(0)">
+                            <img src="images/project10/kargok.jpg" alt="Ana Sayfa Tasarımı">
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(0)">
+                            <img src="images/project10/kargo.jpg" alt="Ana Sayfa Tasarımı">
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(1)">
+                            <img src="images/project10/kargo1.jpg" alt="Dashboard Görünümü">
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(2)">
+                            <img src="images/project10/kargo2.jpg" alt="Mobil Uyumluluk">
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(3)">
+                            <img src="images/project10/kargo3.jpg" alt="Kullanıcı Profili">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img src="" alt="" id="lightbox-img">
+            <div class="lightbox-nav">
+                <button onclick="changeImage(-1)">&lt;</button>
+                <button onclick="changeImage(1)">&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy;  Emre Sefa Portfolio Web Sitesi.Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Galeri için JavaScript
+        const images = [
+            'images/project10/kargok.jpg',
+            'images/project10/kargo.jpg',
+            'images/project10/kargo1.jpg',
+            'images/project10/kargo2.jpg',
+            'images/project10/kargo3.jpg',
+
+            
+        ];
+
+        let currentImageIndex = 0;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImg.src = images[currentImageIndex];
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+        }
+
+        function changeImage(direction) {
+            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            lightboxImg.src = images[currentImageIndex];
+        }
+
+        // ESC tuşu ile lightbox'ı kapatma
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

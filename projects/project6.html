@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilgi Adası Detayları</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="../index.html#projects">Portfolio</a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="../index.html#home">Ana Sayfa</a></li>
+            <li><a href="../index.html#about">Hakkımda</a></li>
+            <li><a href="../index.html#skills">Yetenekler</a></li>
+            <li><a href="../index.html#projects">Projeler</a></li>
+            <li><a href="../index.html#contact">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <div class="project-detail">
+        <div class="project-header">
+            <h1 data-aos="fade-up">Bilgi Adası Mobil Uygulaması</h1>
+            <div class="project-meta">
+                <div class="tech-stack">
+                    <span class="tech-tag"><i class="fab fa-react"></i>Flutter</span>
+                    <span class="tech-tag"><i class="fab fa-node-js"></i> Dart</span>
+                    <span class="tech-tag"><i class="fas fa-database"></i> Shared Preferences</span>
+                </div>
+            </div>
+        </div>
+
+      
+        
+
+            <div class="project-description" data-aos="fade-up"> 
+                <h2>Proje Hakkında</h2>
+                <p>Bu mobil uygulama küçük yaştaki çocuklar için öğrenme,öğrendiklerini test etme ve çeşitli basit oyunları içeriyor..</p>
+                
+                <h2>Teknik Detaylar</h2>
+                <ul>
+                    <li>Frontend: Flutter ve dart dili kullanarak proje kodlandı.</li>
+                    <li>Backend: Shared Preferences kullanarak cihaz üzerinde ilerlemeler kayıt altında tutuluyor.</li>
+                    
+                </ul>
+
+                <h2>Öne Çıkan Özellikler</h2>
+                <ul>
+                    <li>Modern ve şık tasarım.</li>
+                    <li>Responsive yani tüm cihazlara uyum özelliği.</li>
+                    <li>Görsel olarak öğrenme ve test etme. </li>
+                    <li>Uygulama içi sesler.</li>
+                    <li>Çeşitli oyunlar.</li>
+
+                    
+                </ul>
+
+
+
+                <h2>Proje Galerisi (Galeride Gezinmek İçin Fotoğrafların Üstüne Tıklayınız)</h2>
+                <div class="gallery-grid-vertical">
+                    <div class="gallery-item-vertical" onclick="openLightbox(0)">
+                        <img src="images/project6/bil.jpg" alt="fm 1">
+                    </div>
+                    <div class="gallery-item-vertical" onclick="openLightbox(0)">
+                        <img src="images/project6/bil1.jpg" alt="fm 1">
+                    </div>
+                    <div class="gallery-item-vertical" onclick="openLightbox(1)">
+                        <img src="images/project6/bil2.jpg" alt="fm 2">
+                    </div>
+                    <div class="gallery-item-vertical" onclick="openLightbox(2)">
+                        <img src="images/project6/bil3.jpg" alt="fm 3">
+                    </div>
+                    <div class="gallery-item-vertical" onclick="openLightbox(3)">
+                        <img src="images/project6/bil4.jpg" alt="fm 4">
+                    </div>
+                    <div class="gallery-item-vertical" onclick="openLightbox(4)">
+                        <img src="images/project6/bil5.jpg" alt="fm 5">
+                    </div>
+                    <div class="gallery-item-vertical" onclick="openLightbox(5)">
+                        <img src="images/project6/bil6.jpg" alt="fm 6">
+                    </div>
+                    <div class="gallery-item-vertical" onclick="openLightbox(6)">
+                        <img src="images/project6/bil7.jpg" alt="fm 7">
+                    </div>
+                    <div class="gallery-item-vertical" onclick="openLightbox(7)">
+                        <img src="images/project6/bil8.jpg" alt="fm 8">
+                    </div>
+                    <div class="gallery-item-vertical" onclick="openLightbox(8)">
+                        <img src="images/project6/bil9.jpg" alt="fm 9">
+                    </div>
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img src="" alt="" id="lightbox-img">
+            <div class="lightbox-nav">
+                <button onclick="changeImage(-1)">&lt;</button>
+                <button onclick="changeImage(1)">&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy;  Emre Sefa Portfolio Web Sitesi.Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Galeri için JavaScript
+        const images = [
+            'images/project6/bil.jpg',
+            'images/project6/bil1.jpg',
+            'images/project6/bil2.jpg',
+            'images/project6/bil3.jpg',
+            'images/project6/bil4.jpg',
+            'images/project6/bil5.jpg',
+            'images/project6/bil6.jpg',
+            'images/project6/bil7.jpg',
+            'images/project6/bil8.jpg',
+            'images/project6/bil9.jpg'
+        ];
+
+
+        let currentImageIndex = 0;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImg.src = images[currentImageIndex];
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+        }
+
+        function changeImage(direction) {
+            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            lightboxImg.src = images[currentImageIndex];
+        }
+
+        // ESC tuşu ile lightbox'ı kapatma
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
