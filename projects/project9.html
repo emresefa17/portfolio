@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çiçek Bahçesi Detayları</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-logo">
+        <a href="../index.html#projects">Portfolio</a>
+    </div>
+    <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links">
+        <li><a href="../index.html#home">Ana Sayfa</a></li>
+        <li><a href="../index.html#about">Hakkımda</a></li>
+        <li><a href="../index.html#skills">Yetenekler</a></li>
+        <li><a href="../index.html#projects">Projeler</a></li>
+        <li><a href="../index.html#contact">İletişim</a></li>
+    </ul>
+</nav>
+
+<div class="project-detail">
+    <div class="project-header">
+        <h1 data-aos="fade-up">Portfolio Web Sitesi</h1>
+        <div class="project-meta">
+            <div class="tech-stack">
+                <span class="tech-tag"><i class="fab fa-react"></i> HTML</span>
+                <span class="tech-tag"><i class="fab fa-node-js"></i> CSS</span>
+                <span class="tech-tag"><i class="fas fa-database"></i> JavaScript</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="project-description" data-aos="fade-up">
+        <h2>Proje Hakkında</h2>
+        <p>Bu modern web uygulaması, kullanıcı dostu arayüzü ve gelişmiş özellikleriyle öne çıkıyor. Bu proje projelerini sergilemek için hazırlanmış bir şablondur.</p>
+
+        <h2>Teknik Detaylar</h2>
+        <ul>
+            <li>Frontend: HTML,CSS kullanılarak arayüz tasarlandı.</li>
+
+
+        </ul>
+
+        <h2>Öne Çıkan Özellikler</h2>
+        <ul>
+            <li>Yetenekler </li>
+            <li>Projeler</li>
+            <li>Proje detayları</li>
+            <li>Responsive</li>
+        </ul>
+
+
+
+        <h2>Proje Galerisi(Galeride Gezinmek İçin Fotoğrafların Üstüne Tıklayınız)</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(0)">
+                <img src="images/project9/hafriyat1.png" alt="Ana Sayfa Tasarımı">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(1)">
+                <img src="images/project9/hafriyat2.png" alt="Dashboard Görünümü">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(2)">
+                <img src="images/project9/hafriyat3.png" alt="Mobil Uyumluluk">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(3)">
+                <img src="images/project9/hafriyat4.png" alt="Kullanıcı Profili">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(4)">
+                <img src="images/project8/detay.png" alt="İstatistikler">
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img src="" alt="" id="lightbox-img">
+        <div class="lightbox-nav">
+            <button onclick="changeImage(-1)">&lt;</button>
+            <button onclick="changeImage(1)">&gt;</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy;  Emre Sefa Portfolio Web Sitesi.Tüm hakları saklıdır.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+    });
+
+    // Galeri için JavaScript
+    const images = [
+        'images/project9/hafriyat1.png',
+        'images/project9/hafriyat2.png',
+        'images/project9/hafriyat3.png',
+        'images/project9/hafriyat4.png',
+        'images/project8/detay.png',
+
+    ];
+
+    let currentImageIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(index) {
+        currentImageIndex = index;
+        lightboxImg.src = images[currentImageIndex];
+        lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+    }
+
+    function changeImage(direction) {
+        currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+        lightboxImg.src = images[currentImageIndex];
+    }
+
+    // ESC tuşu ile lightbox'ı kapatma
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+</script>
+</body>
+</html>
